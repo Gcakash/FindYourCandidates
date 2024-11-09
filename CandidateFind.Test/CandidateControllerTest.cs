@@ -5,7 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 
-namespace CandidateFinder.Test.CandidateTest
+namespace CandidateFinder.Test
 {
     [TestFixture]
     public class CandidateControllerTest
@@ -25,7 +25,8 @@ namespace CandidateFinder.Test.CandidateTest
         {
             //Arrange
 
-            var candidateDto = new CandidateDTO {
+            var candidateDto = new CandidateDTO
+            {
                 Id = 1,
                 FirstName = "Akash",
                 LastName = "G C",
@@ -35,10 +36,10 @@ namespace CandidateFinder.Test.CandidateTest
             };
 
             _mediatoryMock.Setup(m => m.Send(It.IsAny<UpsertCandidateCommand>(), It.IsAny<CancellationToken>()))
-                   .ReturnsAsync(new ResponseModel<CandidateDTO> { Result = candidateDto});
+                   .ReturnsAsync(new ResponseModel<CandidateDTO> { Result = candidateDto });
 
             //Act
-            var result =  await _controller.UpsertAsync(candidateDto) as OkObjectResult;
+            var result = await _controller.UpsertAsync(candidateDto) as OkObjectResult;
 
             //Assert
             Assert.NotNull(result);

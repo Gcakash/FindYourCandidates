@@ -20,9 +20,9 @@ namespace CandidateFinder.Test.CandidateTest
         [SetUp]
         public void Setup()
         {
-          _options = new DbContextOptionsBuilder<AppllicationDbContext>()
-            .UseSqlite("DataSource=:memory:")
-            .Options;
+            _options = new DbContextOptionsBuilder<AppllicationDbContext>()
+              .UseSqlite("DataSource=:memory:")
+              .Options;
             _context = new AppllicationDbContext(_options);
             _context.Database.OpenConnection();
             _context.Database.EnsureCreated();
@@ -57,7 +57,8 @@ namespace CandidateFinder.Test.CandidateTest
             //Arrange
             //await AddCandidateDataAsync();
 
-            var newCandidate = new CandidateDTO {
+            var newCandidate = new CandidateDTO
+            {
                 Id = 1,
                 FirstName = "Jon",
                 LastName = "G",
@@ -72,7 +73,7 @@ namespace CandidateFinder.Test.CandidateTest
             var command = new UpsertCandidateCommand(newCandidate);
             var handler = new UpsertCandidateCommandHandler(_context);
             //Act
-            var result =  await handler.Handle(command,CancellationToken.None);
+            var result = await handler.Handle(command, CancellationToken.None);
 
             //Assert
             Assert.NotNull(result);
@@ -170,7 +171,7 @@ namespace CandidateFinder.Test.CandidateTest
 
             //Assert
             Assert.NotNull(result);
-            Assert.NotNull(result.Error);       
+            Assert.NotNull(result.Error);
             Assert.AreEqual("Email is required", result.Error.ErrorMessage);
         }
     }
