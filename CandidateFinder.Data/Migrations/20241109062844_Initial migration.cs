@@ -5,7 +5,7 @@
 namespace CandidateFinder.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class Initialmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,10 +19,10 @@ namespace CandidateFinder.Data.Migrations
                     FirstName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false),
-                    PreferredCallTime = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    LinkedInUrl = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    GitHubUrl = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "TEXT", maxLength: 15, nullable: true),
+                    PreferredCallTime = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    LinkedInUrl = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    GitHubUrl = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
                     Comment = table.Column<string>(type: "TEXT", maxLength: 500, nullable: false)
                 },
                 constraints: table =>

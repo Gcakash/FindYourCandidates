@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CandidateFinder.Data.Migrations
 {
     [DbContext(typeof(AppllicationDbContext))]
-    [Migration("20241108070523_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20241109062844_Initial migration")]
+    partial class Initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,6 @@ namespace CandidateFinder.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GitHubUrl")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
@@ -51,17 +50,14 @@ namespace CandidateFinder.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LinkedInUrl")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PreferredCallTime")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 

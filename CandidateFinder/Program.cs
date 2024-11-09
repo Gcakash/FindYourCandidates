@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(m => m.RegisterServicesFromAssembly(typeof(MediatREntryPoint).Assembly));
 builder.Services.AddDbContext<AppllicationDbContext>(options =>
-                 options.UseSqlite("Data Source=CandidateFinder"));
+                 options.UseSqlite("Data Source=CandidateFinder.db"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

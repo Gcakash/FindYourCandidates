@@ -38,7 +38,6 @@ namespace CandidateFinder.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GitHubUrl")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
@@ -48,17 +47,14 @@ namespace CandidateFinder.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LinkedInUrl")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PreferredCallTime")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 

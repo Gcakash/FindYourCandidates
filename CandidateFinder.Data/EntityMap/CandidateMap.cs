@@ -38,7 +38,8 @@ namespace CandidateFinder.Data.EntityMap
                 .IsRequired(false);
 
             builder.Property(c => c.LinkedInUrl)
-                .HasMaxLength(100);
+                .HasMaxLength(100)
+                .IsRequired(false);
 
             builder.Property(c => c.GitHubUrl)
                 .HasMaxLength(100)
@@ -46,7 +47,7 @@ namespace CandidateFinder.Data.EntityMap
 
             builder.Property(c => c.Comment)
                 .HasMaxLength(500)
-                .IsRequired(false);
+                .IsRequired();
 
             // Unique constraint on Email
             builder.HasIndex(c => c.Email).IsUnique();
